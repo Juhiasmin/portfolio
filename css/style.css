@@ -1,0 +1,397 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.logo,
+.hero-content h1 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.hero-content h1 {
+  font-weight: 400;
+  letter-spacing: 4px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 28px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  z-index: 1000;
+}
+
+
+.menu a {
+  margin-left: 28px;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+/* MENU MOBILE */
+.menu-mobile {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* HERO */
+/* ===== HERO COM IMAGENS ===== */
+.hero-imagens {
+  min-height: 100vh;
+  padding-top: 140px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+/* GRID DE FOTOS */
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.hero-grid img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+/* FOTO MAIOR */
+.hero-grid img:first-child {
+  grid-row: span 2;
+  height: 740px;
+}
+
+/* TEXTO */
+.hero-texto h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.hero-texto p {
+  font-size: 16px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+/* BOTÃO ESCURO */
+.btn.dark {
+  border: 1px solid #000;
+  color: #000;
+}
+
+.btn.dark:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .hero-imagens {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 120px 24px 60px;
+  }
+
+  .hero-grid img:first-child {
+    height: 420px;
+  }
+
+  .hero-grid img {
+    height: 220px;
+  }
+
+  .hero-texto h1 {
+    font-size: 34px;
+  }
+}
+
+
+/* BOTÃO */
+.btn {
+  border: 1px solid #fff;
+  padding: 14px 40px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  transition: all .4s ease;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ANIMAÇÃO INICIAL */
+.fade-start {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.fade-delay-1 {
+  animation-delay: .4s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .header {
+    padding: 20px 30px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    background: #fff;
+    padding: 20px;
+    gap: 18px;
+  }
+
+  .menu-mobile {
+    display: block;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+}
+/* ===== PÁGINAS INTERNAS ===== */
+.pagina-interna {
+  padding-top: 160px;
+  padding-bottom: 120px;
+}
+
+.conteudo {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.conteudo h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+}
+
+.conteudo p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+  color: #111;
+}
+
+/* ===== PORTFÓLIO ===== */
+.grid-portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 60px;
+}
+
+.grid-portfolio img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform .4s ease, opacity .4s ease;
+}
+
+.grid-portfolio img:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+/* ===== SCROLL REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1.2s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ===== SERVIÇOS - CARDS ===== */
+.cards-servicos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.card {
+  border: 1px solid #e5e5e5;
+  padding: 50px 40px;
+  transition: all .4s ease;
+  background: #e9caca;
+}
+
+.card h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.card:hover {
+  border-color: #000;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .cards-servicos {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .card {
+    padding: 40px 28px;
+  }
+}
+/* ===== SOBRE EDITORIAL ===== */
+.sobre-editorial {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.sobre-texto h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+}
+
+.sobre-texto p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.sobre-foto img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .sobre-editorial {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sobre-foto {
+    text-align: center;
+  }
+
+  .sobre-foto img {
+    max-width: 300px;
+  }
+}
+/* ===== SERVIÇOS COM FOTO ===== */
+.card-foto {
+  position: relative;
+  height: 380px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  transition: transform .4s ease;
+}
+
+.card-foto:hover {
+  transform: scale(1.02);
+}
+
+.card-overlay {
+  width: 100%;
+  padding: 40px 32px;
+  background: rgba(160, 158, 158, 0.45);
+  color: #fff;
+}
+
+.card-overlay h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.card-overlay p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .card-foto {
+    height: 300px;
+  }
+
+  .card-overlay {
+    padding: 30px 24px;
+  }
+}
