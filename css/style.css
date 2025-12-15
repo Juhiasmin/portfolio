@@ -144,6 +144,17 @@ a {
   color: #000;
 }
 
+@media (max-width: 768px) {
+  .hero-texto .btn {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .hero-texto .btn:last-child {
+    margin-bottom: 0;
+  }
+}
+
 /* ANIMAÇÃO INICIAL */
 .fade-start {
   opacity: 0;
@@ -191,6 +202,7 @@ a {
     font-size: 30px;
   }
 }
+
 /* ===== PÁGINAS INTERNAS ===== */
 .pagina-interna {
   padding-top: 160px;
